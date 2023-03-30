@@ -1,0 +1,19 @@
+﻿<Window x:Class="App_tien_dien.FormLoginCustomer"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:App_tien_dien"
+        mc:Ignorable="d"
+        Title="Trang đăng nhập của khách hàng" Height="394" Width="565">
+    <Grid Height="363" VerticalAlignment="Top">
+        <TextBlock HorizontalAlignment="Left" Margin="98,10,0,0" TextWrapping="Wrap" Text="Trang thông tin tiền điện cho hộ cá nhân" VerticalAlignment="Top" FontSize="20"/>
+        <TextBlock HorizontalAlignment="Left" Margin="45,82,0,0" TextWrapping="Wrap" Text="Mã khách hàng" VerticalAlignment="Top" FontSize="20"/>
+        <TextBlock HorizontalAlignment="Left" Margin="45,151,0,0" TextWrapping="Wrap" Text="Mật khẩu" VerticalAlignment="Top" FontSize="20"/>
+        <TextBox x:Name="inputmakh" HorizontalAlignment="Left" Margin="218,82,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="221" FontSize="20"/>
+        <Button x:Name="btnloginCustomer" Content="Đăng nhập" HorizontalAlignment="Left" Margin="158,221,0,0" VerticalAlignment="Top" FontSize="20" Padding="10,10,10,10" UseLayoutRounding="False" Click="btnloginCustomer_Click"/>
+        <PasswordBox x:Name="inputpassword_customer" HorizontalAlignment="Left" Margin="218,151,0,0" VerticalAlignment="Top" Width="221" FontSize="20"/>
+        <TextBlock HorizontalAlignment="Left" Margin="366,231,0,0" TextWrapping="Wrap" Text="Trang đăng nhập của quản trị viên" VerticalAlignment="Top" FontSize="16"/>
+        <Button x:Name="btn_login_admin" Content="Login Admin" HorizontalAlignment="Left" Margin="408,287,0,0" VerticalAlignment="Top" Padding="5,10,5,10" FontSize="20" Click="btn_login_admin_Click"/>
+    </Grid>
+</Window>

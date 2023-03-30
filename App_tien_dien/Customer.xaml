@@ -1,0 +1,75 @@
+﻿<Window x:Class="App_tien_dien.Customer"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:App_tien_dien"
+        mc:Ignorable="d"
+        Title="Trang thông tin của khách hàng" Height="918" Width="1030">
+    <Grid>
+        <TabControl>
+            <TabItem Header="Thông tin khách hàng" IsSelected="True" FontSize="20">
+                <Grid Background="#FFE5E5E5">
+                    <TextBlock HorizontalAlignment="Left" Margin="53,180,0,0" TextWrapping="Wrap" Text="Mã khách hàng" VerticalAlignment="Top"/>
+                    <TextBox x:Name="makh_infor" HorizontalAlignment="Left" Margin="203,180,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="274" IsReadOnly="True"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="558,188,0,0" TextWrapping="Wrap" Text="Họ và tên" VerticalAlignment="Top"/>
+                    <TextBox x:Name="hoten_infor" HorizontalAlignment="Left" Margin="696,186,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="278"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="53,266,0,0" TextWrapping="Wrap" Text="Số điện thoại" VerticalAlignment="Top"/>
+                    <TextBox x:Name="sodt_infor" HorizontalAlignment="Left" Margin="203,264,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="274" RenderTransformOrigin="0.564,3.687"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="558,264,0,0" TextWrapping="Wrap" Text="Email" VerticalAlignment="Top"/>
+                    <TextBox x:Name="email_infor" HorizontalAlignment="Left" Margin="696,264,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="278"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="53,345,0,0" TextWrapping="Wrap" Text="Địa chỉ" VerticalAlignment="Top"/>
+                    <TextBox x:Name="diachi_infor" HorizontalAlignment="Left" Margin="203,345,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="274"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="558,345,0,0" TextWrapping="Wrap" Text="Mã công tơ" VerticalAlignment="Top"/>
+                    <TextBox x:Name="macongto_infor" HorizontalAlignment="Left" Margin="696,345,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="278" IsReadOnly="True"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="374,50,0,0" TextWrapping="Wrap" Text="Thông tin khách hàng" VerticalAlignment="Top" FontSize="24"/>
+                    <Button x:Name="btn_logout_infor" Content="Đăng xuất" HorizontalAlignment="Left" Margin="878,12,0,0" VerticalAlignment="Top" Padding="5,10,5,10" FontSize="24" Click="btn_logout_infor_Click"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Thông tin hóa đơn" FontSize="20">
+                <Grid Background="#FFE5E5E5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="239*"/>
+                        <ColumnDefinition Width="161*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock HorizontalAlignment="Left" Margin="424,10,0,0" TextWrapping="Wrap" Text="Thông tin hóa đơn" VerticalAlignment="Top" FontSize="22" Height="27" Width="186"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="47,57,0,0" TextWrapping="Wrap" Text="Mã hóa đơn" VerticalAlignment="Top" FontSize="18" Height="24" Width="97"/>
+                    <TextBox x:Name="mahd_hoadon" HorizontalAlignment="Left" Margin="188,57,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="272" FontSize="20" Height="29" IsReadOnly="True"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="579,57,0,0" TextWrapping="Wrap" Text="Mã công tơ" VerticalAlignment="Top" FontSize="18" RenderTransformOrigin="0.558,0.002" Grid.ColumnSpan="2" Height="24" Width="92"/>
+                    <TextBox x:Name="macongto_hoadon" HorizontalAlignment="Left" Margin="105,57,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="263" FontSize="20" Grid.Column="1" Height="29" IsReadOnly="True"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="47,112,0,0" TextWrapping="Wrap" Text="Mã khách hàng" VerticalAlignment="Top" FontSize="18" Height="24" Width="136"/>
+                    <TextBox x:Name="makh_hoadon" HorizontalAlignment="Left" Margin="188,107,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="33" FontSize="22" Width="272" IsReadOnly="True"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="579,112,0,0" TextWrapping="Wrap" Text="Tên khách hàng" VerticalAlignment="Top" FontSize="18" Grid.ColumnSpan="2" Height="24" Width="145"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="47,166,0,0" TextWrapping="Wrap" Text="Bảng đơn giá" VerticalAlignment="Top" FontSize="18" RenderTransformOrigin="0.488,0.194" Height="24" Width="118"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="579,168,0,0" TextWrapping="Wrap" Text="Tháng" VerticalAlignment="Top" FontSize="18" Height="24" Width="50" Grid.ColumnSpan="2"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="47,218,0,0" TextWrapping="Wrap" Text="Chỉ số cũ" VerticalAlignment="Top" FontSize="18" Height="24" Width="92"/>
+                    <TextBox x:Name="chisocu_hoadon" HorizontalAlignment="Left" Margin="188,218,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="272" FontSize="20" Height="29" IsReadOnly="True"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="579,220,0,0" TextWrapping="Wrap" Text="Chỉ số mới" VerticalAlignment="Top" Grid.ColumnSpan="2" Width="106" FontSize="18" Height="24"/>
+                    <TextBox x:Name="chisomoi_hoadon" HorizontalAlignment="Left" Margin="105,218,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="263" Grid.Column="1" FontSize="20" Height="29" IsReadOnly="True"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="47,271,0,0" TextWrapping="Wrap" Text="Thành tiền" VerticalAlignment="Top" FontSize="18" Height="24" Width="97"/>
+                    <TextBox x:Name="thanhtien_hoadon" HorizontalAlignment="Left" Margin="188,271,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="272" FontSize="20" Height="29" IsReadOnly="True"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="579,276,0,0" TextWrapping="Wrap" Text="Trạng thái" VerticalAlignment="Top" Grid.ColumnSpan="2" FontSize="18" Width="92" Height="24"/>
+                    <TextBox x:Name="tenkh_hoadon" HorizontalAlignment="Left" Margin="105,109,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="263" FontSize="20" Grid.Column="1" Height="29" IsReadOnly="True"/>
+                    <TextBox x:Name="thang_hoadon" HorizontalAlignment="Left" Margin="105,166,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="263" Grid.Column="1" FontSize="20" Height="29" IsReadOnly="True"/>
+                    <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="50,323,0,0" TextWrapping="Wrap" Text="Tìm kiếm thông tin hóa đơn" VerticalAlignment="Top" FontSize="18"/>
+                    <RadioButton x:Name="radio_mahd" GroupName="ma_hd_kh" Grid.Column="1" Content="Mã hóa đơn" HorizontalAlignment="Left" Margin="50,361,0,0" VerticalAlignment="Top" FontSize="20"/>
+                    <TextBox x:Name="inputsearch_hoadon" Grid.Column="1" HorizontalAlignment="Left" Margin="50,468,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="199" FontSize="20"/>
+                    <Button x:Name="btn_search" Grid.Column="1" Content="Tìm kiếm" HorizontalAlignment="Left" Margin="268,459,0,0" VerticalAlignment="Top" FontSize="20" Padding="5,10,5,10" RenderTransformOrigin="0.522,1.014" Height="46" Width="100" Click="btn_search_Click"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="47,334,0,0" TextWrapping="Wrap" Text="Email" VerticalAlignment="Top" FontSize="20"/>
+                    <TextBox x:Name="inputemail_hoadon" HorizontalAlignment="Left" Margin="188,332,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="272" FontSize="20" IsReadOnly="True"/>
+                    <RadioButton x:Name="radio_dathanhtoan" Grid.Column="1" GroupName="check_thanh_toan" Content="Hóa đơn đã thanh toán&#xD;&#xA;" HorizontalAlignment="Left" Margin="50,423,0,0" VerticalAlignment="Top" FontSize="20" Height="31"/>
+                    <RadioButton x:Name="radio_chuathanhtoan" Grid.Column="1" GroupName="check_thanh_toan" Content="Hóa đơn chưa thanh toán" HorizontalAlignment="Left" Margin="50,392,0,0" VerticalAlignment="Top" FontSize="20"/>
+                    <Button x:Name="btn_reset" Content="Làm mới" HorizontalAlignment="Left" Margin="360,399,0,0" VerticalAlignment="Top" Width="100" Padding="5,10,5,10" FontSize="20" Click="btn_reset_Click"/>
+                    <Button x:Name="btn_thanhtoan" Content="Thanh toán" HorizontalAlignment="Left" Margin="149,399,0,0" VerticalAlignment="Top" Padding="5,10,5,10" Click="btn_thanhtoan_Click"/>
+                    <DataGrid x:Name="grid_list_hoadon" IsReadOnly="True"  d:ItemsSource="{d:SampleData ItemCount=5}" Grid.ColumnSpan="2" Height="255" VerticalAlignment="Bottom" SelectionChanged="grid_list_hoadon_SelectionChanged"/>
+                    <TextBox x:Name="status_thanhtoan" Grid.Column="1" HorizontalAlignment="Left" Margin="105,274,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="263" IsReadOnly="True"/>
+                    <Button x:Name="btn_logout_hoadon" Grid.Column="1" Content="Đăng xuất" HorizontalAlignment="Left" Margin="299,12,0,0" VerticalAlignment="Top" Padding="5,5,5,5" Click="btn_logout_hoadon_Click"/>
+                    <ComboBox x:Name="cb_don_gia" HorizontalAlignment="Left" Margin="188,162,0,0" VerticalAlignment="Top" Width="272" FontSize="16"/>
+                    <Button x:Name="btn_export_hoadon" Content="Xuất danh sách" HorizontalAlignment="Left" Margin="465,488,0,0" VerticalAlignment="Top" Padding="5,10,5,10" Grid.ColumnSpan="2" Click="btn_export_hoadon_Click"/>
+                    <TextBlock HorizontalAlignment="Left" Margin="47,484,0,0" TextWrapping="Wrap" Text="Lựa chọn trạng thái hóa đơn" VerticalAlignment="Top" Width="136"/>
+                    <ComboBox x:Name="cb_status_hoadon" HorizontalAlignment="Left" Margin="202,496,0,0" VerticalAlignment="Top" Width="258"/>
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>
