@@ -862,6 +862,8 @@ namespace App_tien_dien
             }
         }
 
+        bool chiso_hople = true;
+
         private void btn_add_Click(object sender, RoutedEventArgs e)
         {
             if (cb_list_makh.SelectedItem != null)
@@ -876,6 +878,23 @@ namespace App_tien_dien
             if (checkform_hoadon() == true)
             {
                 MessageBox.Show("Bạn chưa nhập đủ thông tin của hóa đơn!");
+                return;
+            }
+
+            if(chiso_hople == false) {
+                MessageBox.Show("Chỉ số mới phải lớn hơn chỉ số cũ!");
+                return;
+            }
+
+            if (double.TryParse(chisocu_hoadon.Text, out double l) == false)
+            {
+                MessageBox.Show("Chỉ số cũ phải là số!");
+                return;
+            }
+
+            if (double.TryParse(chisomoi_hoadon.Text, out double k) == false)
+            {
+                MessageBox.Show("Chỉ số mới phải là số!");
                 return;
             }
 
@@ -978,6 +997,24 @@ namespace App_tien_dien
                 return;
             }
 
+            if (chiso_hople == false)
+            {
+                MessageBox.Show("Chỉ số mới phải lớn hơn chỉ số cũ!");
+                return;
+            }
+
+            if (double.TryParse(chisocu_hoadon.Text, out double l) == false)
+            {
+                MessageBox.Show("Chỉ số cũ phải là số!");
+                return;
+            }
+
+            if (double.TryParse(chisomoi_hoadon.Text, out double k) == false)
+            {
+                MessageBox.Show("Chỉ số mới phải là số!");
+                return;
+            }
+
             try
             {
                 SqlConnection conn = new SqlConnection(sqlConnect);
@@ -1061,6 +1098,12 @@ namespace App_tien_dien
             if (checkform_hoadon() == true)
             {
                 MessageBox.Show("Bạn chưa nhập đủ thông tin của hóa đơn để xóa!");
+                return;
+            }
+
+            if (check_edit_form_hoadon() == false)
+            {
+                MessageBox.Show("Các trường thông tin không chính xác để xóa!");
                 return;
             }
 
@@ -1364,6 +1407,12 @@ namespace App_tien_dien
 
         private void chisomoi_hoadon_TextChanged(object sender, TextChangedEventArgs e)
         {
+            if (double.TryParse(chisocu_hoadon.Text, out double l) == false)
+            {
+                thanhtien_hoadon.Text = "Chỉ số cũ phải là số";
+                return;
+            }
+
             if (double.TryParse(chisomoi_hoadon.Text, out double k) == false)
             {
                 thanhtien_hoadon.Text = "Chỉ số mới phải là số";
@@ -1374,8 +1423,11 @@ namespace App_tien_dien
             if (so_dien_tieu_thu <= 0)
             {
                 thanhtien_hoadon.Text = "Chỉ số mới phải cao hơn chỉ số cũ!";
+                chiso_hople = false;
                 return;
             }
+
+            chiso_hople = true;
 
             double thanh_tien = 0;
             double tmp = 0;
